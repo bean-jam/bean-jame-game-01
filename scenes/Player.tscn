@@ -1,10 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bv7img0p78c62"]
+[gd_scene load_steps=21 format=3 uid="uid://bv7img0p78c62"]
 
 [ext_resource type="Script" uid="uid://us0yogqkr4f0" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bsn8yfnbg26v8" path="res://islander_.png" id="1_xhfnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
 size = Vector2(15.405406, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
 atlas = ExtResource("1_xhfnw")
@@ -21,6 +25,18 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxr5p"]
 atlas = ExtResource("1_xhfnw")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6rpx"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3kul"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jatw7"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdg3f"]
 atlas = ExtResource("1_xhfnw")
@@ -58,6 +74,14 @@ region = Rect2(112, 16, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rv870")
+}],
+"loop": true,
+"name": &"air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kpjcp")
 }, {
 "duration": 1.0,
@@ -72,6 +96,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6rpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3kul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jatw7")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,7 +138,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 7.0
+"speed": 15.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -108,6 +146,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(2, -6)
 script = ExtResource("1_kpjcp")
+walk_speed = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 2)
@@ -116,6 +155,16 @@ shape = SubResource("RectangleShape2D_dtqjt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_tdg3f")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.47119927
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.615, 2.615)
+limit_enabled = false
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.3
+drag_right_margin = 0.15
+drag_bottom_margin = 0.3
