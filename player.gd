@@ -5,7 +5,7 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 var jump_counter = 0
 var max_jump = 2
-var power_active = false #powerup to triple jump 
+var power_active = true #powerup to triple jump 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
