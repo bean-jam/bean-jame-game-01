@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ekicu83pbmc"]
+
+[sub_resource type="Gradient" id="Gradient_pn638"]
+offsets = PackedFloat32Array(0.0054945056, 0.36263737, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.44198897, 0.44198897, 0.44198897, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d4v33"]
+gradient = SubResource("Gradient_pn638")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_my26j"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(-2.99, 0, 0)
+gravity = Vector3(0, -10, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 3.3999977
+scale_max = 5.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_d4v33")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.16999997
+turbulence_noise_strength = 8.07
+turbulence_noise_scale = 2.467
+
+[sub_resource type="Gradient" id="Gradient_d4v33"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_my26j"]
+gradient = SubResource("Gradient_d4v33")
+fill = 1
+fill_from = Vector2(0.49326146, 0.38409704)
+
+[sub_resource type="Environment" id="Environment_o2tjn"]
+glow_enabled = true
+glow_bloom = 0.3
+glow_blend_mode = 0
+adjustment_enabled = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_my26j")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_my26j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o2tjn")
