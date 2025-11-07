@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c42ol8u13pml"]
+[gd_scene load_steps=4 format=3 uid="uid://c42ol8u13pml"]
 
 [ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://Player.tscn" id="1_eb713"]
+[ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://Sunny Cloud Background.png" id="2_ch0vu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb713"]
 size = Vector2(188, 10)
@@ -25,3 +26,10 @@ position = Vector2(324, 196)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -6)
 position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(336, 190)
+scale = Vector2(0.4351852, 0.43518516)
+texture = ExtResource("2_ch0vu")
+offset = Vector2(-10.09, 0)
