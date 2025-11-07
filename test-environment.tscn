@@ -1,14 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c42ol8u13pml"]
+[gd_scene load_steps=3 format=3 uid="uid://c42ol8u13pml"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihhit"]
-size = Vector2(642, 20)
+[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://Player.tscn" id="1_eb713"]
 
-[node name="Test Platform" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb713"]
+size = Vector2(188, 10)
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 360, 640, 360)
-closed = true
+[node name="Node2D" type="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(322, 361)
-shape = SubResource("RectangleShape2D_ihhit")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(324, 216)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D"]
+position = Vector2(36.88671, 126)
+scale = Vector2(1.2106462, 1)
+points = PackedVector2Array(-98.65, -121, 57, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12, 5)
+shape = SubResource("RectangleShape2D_eb713")
+
+[node name="Player" parent="." instance=ExtResource("1_eb713")]
+position = Vector2(324, 196)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-5, -6)
+position_smoothing_enabled = true
