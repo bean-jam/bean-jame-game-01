@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c42ol8u13pml"]
+[gd_scene load_steps=6 format=3 uid="uid://c42ol8u13pml"]
 
 [ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://Player.tscn" id="1_eb713"]
+[ext_resource type="Script" uid="uid://cxiuslumenr0p" path="res://test_environment.gd" id="1_lc4xx"]
 [ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://Sunny Cloud Background.png" id="2_ch0vu"]
+[ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://killzone.tscn" id="4_ai6bt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb713"]
 size = Vector2(188, 10)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lc4xx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(324, 216)
 
 [node name="Line2D" type="Line2D" parent="StaticBody2D"]
@@ -20,16 +24,54 @@ points = PackedVector2Array(-98.65, -121, 57, -121)
 position = Vector2(12, 5)
 shape = SubResource("RectangleShape2D_eb713")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(505, 181)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D2"]
+position = Vector2(36.88671, 126)
+scale = Vector2(1.2106462, 1)
+points = PackedVector2Array(-98.65, -121, 57, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(12, 5)
+shape = SubResource("RectangleShape2D_eb713")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(705, 150)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D3"]
+position = Vector2(36.88671, 126)
+scale = Vector2(1.2106462, 1)
+points = PackedVector2Array(-98.65, -121, 57, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(12, 5)
+shape = SubResource("RectangleShape2D_eb713")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(894, 235)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D4"]
+position = Vector2(36.88671, 126)
+scale = Vector2(1.2106462, 1)
+points = PackedVector2Array(-98.65, -121, 57, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(12, 5)
+shape = SubResource("RectangleShape2D_eb713")
+
 [node name="Player" parent="." instance=ExtResource("1_eb713")]
 position = Vector2(324, 196)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-5, -6)
-position_smoothing_enabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(336, 190)
-scale = Vector2(0.4351852, 0.43518516)
+position = Vector2(569, 184.00003)
+scale = Vector2(0.6138889, 0.61388886)
 texture = ExtResource("2_ch0vu")
 offset = Vector2(-10.09, 0)
+
+[node name="KILLZONE" parent="." instance=ExtResource("4_ai6bt")]
+position = Vector2(123, 606)
