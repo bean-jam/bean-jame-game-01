@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7wjyiq73c8rj"
-path="res://.godot/imported/islander_.png-ab3f29b17c876e3f01ac61a479ba74ea.ctex"
+uid="uid://cnmy8xgc8or1s"
+path="res://.godot/imported/Sunny Cloud Background.png-4e8517fe3ca1951783fa4d6cc01dae11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://islander_.png"
-dest_files=["res://.godot/imported/islander_.png-ab3f29b17c876e3f01ac61a479ba74ea.ctex"]
+source_file="res://assets/Sunny Cloud Background.png"
+dest_files=["res://.godot/imported/Sunny Cloud Background.png-4e8517fe3ca1951783fa4d6cc01dae11.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c42ol8u13pml"]
 
-[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://Player.tscn" id="1_eb713"]
-[ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://Sunny Cloud Background.png" id="2_ch0vu"]
+[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://scenes/Player.tscn" id="1_m4mbt"]
+[ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://assets/Sunny Cloud Background.png" id="2_lwath"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb713"]
 size = Vector2(188, 10)
@@ -20,7 +20,7 @@ points = PackedVector2Array(-98.65, -121, 57, -121)
 position = Vector2(12, 5)
 shape = SubResource("RectangleShape2D_eb713")
 
-[node name="Player" parent="." instance=ExtResource("1_eb713")]
+[node name="Player" parent="." instance=ExtResource("1_m4mbt")]
 position = Vector2(324, 196)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -31,5 +31,5 @@ position_smoothing_enabled = true
 z_index = -10
 position = Vector2(336, 190)
 scale = Vector2(0.4351852, 0.43518516)
-texture = ExtResource("2_ch0vu")
+texture = ExtResource("2_lwath")
 offset = Vector2(-10.09, 0)

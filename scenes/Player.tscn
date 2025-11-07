@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bg3aycvmfrhav"]
+[gd_scene load_steps=17 format=3 uid="uid://bv7img0p78c62"]
 
 [ext_resource type="Script" uid="uid://us0yogqkr4f0" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bsn8yfnbg26v8" path="res://islander_.png" id="1_xhfnw"]
