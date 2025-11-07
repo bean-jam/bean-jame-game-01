@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c42ol8u13pml"]
 
-[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://Player.tscn" id="1_eb713"]
+[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://scenes/Player.tscn" id="1_m4mbt"]
 [ext_resource type="Script" uid="uid://cxiuslumenr0p" path="res://test_environment.gd" id="1_lc4xx"]
-[ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://Sunny Cloud Background.png" id="2_ch0vu"]
+[ext_resource type="Texture2D" uid="uid://cnmy8xgc8or1s" path="res://assets/Sunny Cloud Background.png" id="2_lwath"]
 [ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://killzone.tscn" id="4_ai6bt"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb713"]
 size = Vector2(188, 10)
@@ -63,14 +64,15 @@ points = PackedVector2Array(-98.65, -121, 57, -121)
 position = Vector2(12, 5)
 shape = SubResource("RectangleShape2D_eb713")
 
-[node name="Player" parent="." instance=ExtResource("1_eb713")]
+[node name="Player" parent="." instance=ExtResource("1_m4mbt")]
+
 position = Vector2(324, 196)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(569, 184.00003)
-scale = Vector2(0.6138889, 0.61388886)
-texture = ExtResource("2_ch0vu")
+position = Vector2(336, 190)
+scale = Vector2(0.4351852, 0.43518516)
+texture = ExtResource("2_lwath")
 offset = Vector2(-10.09, 0)
 
 [node name="KILLZONE" parent="." instance=ExtResource("4_ai6bt")]
