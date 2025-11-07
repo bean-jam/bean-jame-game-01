@@ -18,4 +18,4 @@ the world node when it is ready.
 - Add the tile map
 - Add triple jump power up
 
-**go bean team**
+**go bean team!**
