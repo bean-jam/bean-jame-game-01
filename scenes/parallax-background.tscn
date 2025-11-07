@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://by2muw71mt5q8"]
+
+[ext_resource type="Texture2D" uid="uid://bguoh56q6fwfh" path="res://assets/parallax-layers/sky.png" id="1_5vbvl"]
+[ext_resource type="Texture2D" uid="uid://b4vmen6siqj6r" path="res://assets/parallax-layers/far-mountains.png" id="1_xfmo7"]
+[ext_resource type="Texture2D" uid="uid://dgxvuw4bq17k0" path="res://assets/parallax-layers/far-trees.png" id="2_jqk8q"]
+[ext_resource type="Texture2D" uid="uid://d2mfv2gd5h6j6" path="res://assets/parallax-layers/middle-mountains.png" id="4_0rpho"]
+[ext_resource type="Texture2D" uid="uid://bv2o3knfte2mb" path="res://assets/parallax-layers/near-trees.png" id="5_grlik"]
+[ext_resource type="Texture2D" uid="uid://cqkrsrdh2k23t" path="res://assets/parallax-layers/myst.png" id="6_ue3cp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -3724.0
+offset_top = -1815.0
+offset_right = 6887.0
+offset_bottom = 1551.0
+color = Color(0.92941177, 0.3764706, 0.4627451, 1)
+
+[node name="Sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(1565, 1408)
+scale = Vector2(11.166797, 11.008334)
+texture = ExtResource("1_5vbvl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sky"]
+position = Vector2(-2007.9999, 1408)
+scale = Vector2(11.166797, 11.008334)
+texture = ExtResource("1_5vbvl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sky"]
+position = Vector2(5137.001, 1413)
+scale = Vector2(11.166797, 11.008334)
+texture = ExtResource("1_5vbvl")
+
+[node name="Far Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Far Mountains"]
+position = Vector2(-170.00012, 877.0001)
+scale = Vector2(10.214844, 5.74375)
+texture = ExtResource("1_xfmo7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Far Mountains"]
+position = Vector2(3060, 858)
+scale = Vector2(10.214844, 5.74375)
+texture = ExtResource("1_xfmo7")
+
+[node name="Middle Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Middle Mountains"]
+position = Vector2(-183.00002, 1143)
+scale = Vector2(10.095311, 5.864583)
+texture = ExtResource("4_0rpho")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Middle Mountains"]
+position = Vector2(3046.9998, 1157)
+scale = Vector2(10.095311, 5.864583)
+texture = ExtResource("4_0rpho")
+
+[node name="Mist" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mist"]
+position = Vector2(-159.00012, 731)
+scale = Vector2(10.008594, 6.560416)
+texture = ExtResource("6_ue3cp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Mist"]
+position = Vector2(3061, 773)
+scale = Vector2(10.008594, 6.560416)
+texture = ExtResource("6_ue3cp")
+
+[node name="Far Trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Far Trees"]
+position = Vector2(-124.12512, 901.2503)
+scale = Vector2(10.080468, 5.921875)
+texture = ExtResource("2_jqk8q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Far Trees"]
+position = Vector2(3040.9993, 927.2501)
+scale = Vector2(10.080468, 5.921875)
+texture = ExtResource("2_jqk8q")
+
+[node name="Near Trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Near Trees"]
+position = Vector2(-179.00024, 865.24994)
+scale = Vector2(10.212499, 6.0187497)
+texture = ExtResource("5_grlik")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Near Trees"]
+position = Vector2(2994.8745, 885.24994)
+scale = Vector2(10.212499, 6.0187497)
+texture = ExtResource("5_grlik")
