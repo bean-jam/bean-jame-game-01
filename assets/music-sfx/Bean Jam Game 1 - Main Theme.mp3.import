@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdibvei8mgq40"
+path="res://.godot/imported/Bean Jam Game 1 - Main Theme.mp3-ea4895fa00359ea612286859d4d70e3f.mp3str"
+
+[deps]
+
+source_file="res://assets/music-sfx/Bean Jam Game 1 - Main Theme.mp3"
+dest_files=["res://.godot/imported/Bean Jam Game 1 - Main Theme.mp3-ea4895fa00359ea612286859d4d70e3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
