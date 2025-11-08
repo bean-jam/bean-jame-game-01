@@ -17,9 +17,12 @@ var power_active = false # powerup to triple jump
 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump_sfx = $JumpSFX
+@onready var death_sfx = $DeathSFX
 
 func respawn(): # respawn function to set the players position back at starting coordinates of the test enviro
 	self.global_position = spawn_point
+	death_sfx.play()
 	
 	
 
@@ -40,9 +43,11 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("jump") # animation for jumping,!!!NOT WORKING YET!!
 		velocity.y = jump_force
 		jump_counter = 0
+		jump_sfx.play()
 	if Input.is_action_just_pressed("jump") and jump_counter < max_jump:
 		velocity.y = jump_force
 		jump_counter += 1
+		jump_sfx.play()
 	if power_active == true: # boolean to increase max jump counter by 1, allowing triple jump
 		max_jump = 3
 		
