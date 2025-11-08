@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4ug1scfyssje"]
+
+[ext_resource type="AudioStream" uid="uid://bdibvei8mgq40" path="res://assets/music-sfx/Bean Jam Game 1 - Main Theme.mp3" id="1_3h6ak"]
+
+[node name="Music" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3h6ak")
+autoplay = true
+parameters/looping = true
