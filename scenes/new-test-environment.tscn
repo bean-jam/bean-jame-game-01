@@ -20,6 +20,6 @@ position = Vector2(389, 1025)
 scale = Vector2(2, 2)
 
 [node name="KILLZONE" parent="." instance=ExtResource("3_twoqr")]
-position = Vector2(767, 1152)
+position = Vector2(766, 1256)
 
 [node name="Music" parent="." instance=ExtResource("5_twoqr")]
