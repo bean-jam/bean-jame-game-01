@@ -12,7 +12,7 @@ extends CharacterBody2D
 
 var spawn_point = Vector2(324,196) # Vector2 implying 2 coordinates. 324 and 196 is players position when starting game
 var jump_counter = 0 # counter to manage dbl jumps
-var max_jump = 2
+@export var max_jump = 2
 var power_active = false # powerup to triple jump 
 
 
