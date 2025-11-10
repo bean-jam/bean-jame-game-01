@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://8xfhfqouxd8l"]
+[gd_scene load_steps=9 format=3 uid="uid://8xfhfqouxd8l"]
 
 [ext_resource type="PackedScene" uid="uid://di7q142tg02d8" path="res://scenes/tile_map.tscn" id="1_1j6am"]
 [ext_resource type="PackedScene" uid="uid://by2muw71mt5q8" path="res://scenes/parallax-background.tscn" id="1_os403"]
 [ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://scenes/Player.tscn" id="2_os403"]
 [ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://scenes/killzone.tscn" id="3_twoqr"]
 [ext_resource type="PackedScene" uid="uid://4ug1scfyssje" path="res://scenes/music.tscn" id="5_twoqr"]
+[ext_resource type="PackedScene" uid="uid://c0amlxm4qctt1" path="res://scenes/triple_jump_powerup.tscn" id="6_atwwm"]
+[ext_resource type="FontFile" uid="uid://cmvnfe68533p4" path="res://assets/fonts/Ancient Medium.ttf" id="7_kb45w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ocuq"]
+font = ExtResource("7_kb45w")
+shadow_size = 0
 
 [node name="NewTestEnvironment" type="Node2D"]
 
@@ -23,3 +29,14 @@ scale = Vector2(2, 2)
 position = Vector2(766, 1256)
 
 [node name="Music" parent="." instance=ExtResource("5_twoqr")]
+
+[node name="TripleJump" parent="." instance=ExtResource("6_atwwm")]
+position = Vector2(631, 1030)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 592.0
+offset_top = 995.0
+offset_right = 667.0
+offset_bottom = 1013.0
+text = "Triple Jump"
+label_settings = SubResource("LabelSettings_0ocuq")
