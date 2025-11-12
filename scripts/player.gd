@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @export var walk_speed = 200.0 # now a var, to manage walk deceleration. see below
 @export var jump_force = -400.0 # now also a var, to manage variable jump deceleration. see below
+@export var gravity_mult = 1.0 # this can be used to adjust the gravity
 @export_range(0,1) var deceleration = 0.1 # walking deceleration. see below
 @export_range(0,1) var decelerate_on_jump_release = 0.5 # jump button deceleration on release. see below
 
@@ -29,7 +30,7 @@ func respawn(): # respawn function to set the players position back at starting 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * gravity_mult * delta
 		
 
 	# Handle jump.

@@ -6,8 +6,8 @@ func _on_body_entered(body: Node) -> void:
 	if not visible:
 		return
 	if body.name == "Player":
-		var prev_max_jump = body.max_jump # Track what max jump was before powerupe
-		body.max_jump = 3 # Set to triple jump
+		var prev_grav_scale = body.gravity_mult # Track what gravity was before powerupe
+		body.gravity_mult = 0.3 # Set to low gravity
 		
 		set_deferred("visible", false)
 		shape.set_deferred("disabled", true)
@@ -15,7 +15,7 @@ func _on_body_entered(body: Node) -> void:
 		
 		# Power up timer
 		await get_tree().create_timer(5.0).timeout # After 5 seconds reset
-		body.max_jump = prev_max_jump
+		body.gravity_mult = prev_grav_scale
 		respawn()
 
 
