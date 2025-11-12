@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8xfhfqouxd8l"]
+[gd_scene load_steps=11 format=3 uid="uid://8xfhfqouxd8l"]
 
 [ext_resource type="PackedScene" uid="uid://di7q142tg02d8" path="res://scenes/tile_map.tscn" id="1_1j6am"]
 [ext_resource type="PackedScene" uid="uid://by2muw71mt5q8" path="res://scenes/parallax-background.tscn" id="1_os403"]
@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://scenes/killzone.tscn" id="3_twoqr"]
 [ext_resource type="PackedScene" uid="uid://4ug1scfyssje" path="res://scenes/music.tscn" id="5_twoqr"]
 [ext_resource type="PackedScene" uid="uid://c0amlxm4qctt1" path="res://scenes/triple_jump_powerup.tscn" id="6_atwwm"]
+[ext_resource type="PackedScene" uid="uid://cahhlbs1438oe" path="res://scenes/low_gravity_powerup.tscn" id="7_0ocuq"]
 [ext_resource type="FontFile" uid="uid://cmvnfe68533p4" path="res://assets/fonts/Ancient Medium.ttf" id="7_kb45w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ocuq"]
+font = ExtResource("7_kb45w")
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7u3b3"]
 font = ExtResource("7_kb45w")
 shadow_size = 0
 
@@ -30,16 +35,29 @@ position = Vector2(766, 1256)
 
 [node name="Music" parent="." instance=ExtResource("5_twoqr")]
 
-[node name="TripleJump" parent="." instance=ExtResource("6_atwwm")]
-position = Vector2(631, 1030)
+[node name="PowerUps" type="Node2D" parent="."]
 
-[node name="TripleJump2" parent="." instance=ExtResource("6_atwwm")]
-position = Vector2(1865, 1148)
-
-[node name="Label" type="Label" parent="."]
+[node name="TripleJumpLabel" type="Label" parent="PowerUps"]
 offset_left = 592.0
 offset_top = 995.0
 offset_right = 667.0
 offset_bottom = 1013.0
 text = "Triple Jump"
 label_settings = SubResource("LabelSettings_0ocuq")
+
+[node name="TripleJump" parent="PowerUps" instance=ExtResource("6_atwwm")]
+position = Vector2(631, 1030)
+
+[node name="TripleJump2" parent="PowerUps" instance=ExtResource("6_atwwm")]
+position = Vector2(1865, 1148)
+
+[node name="LowGravityLabel" type="Label" parent="PowerUps"]
+offset_left = 2407.0
+offset_top = 535.0
+offset_right = 2482.0
+offset_bottom = 553.0
+text = "Low Gravity"
+label_settings = SubResource("LabelSettings_7u3b3")
+
+[node name="LowGravity" parent="PowerUps" instance=ExtResource("7_0ocuq")]
+position = Vector2(2444, 582)
