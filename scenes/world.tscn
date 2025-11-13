@@ -1,3 +1,70 @@
-[gd_scene format=3 uid="uid://bskhexa5tj4l8"]
+[gd_scene load_steps=12 format=3 uid="uid://bskhexa5tj4l8"]
+
+[ext_resource type="PackedScene" uid="uid://by2muw71mt5q8" path="res://scenes/parallax-background.tscn" id="1_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://di7q142tg02d8" path="res://scenes/tile_map.tscn" id="2_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://scenes/Player.tscn" id="3_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://scenes/killzone.tscn" id="4_q5onr"]
+[ext_resource type="FontFile" uid="uid://cmvnfe68533p4" path="res://assets/fonts/Ancient Medium.ttf" id="5_jhx03"]
+[ext_resource type="PackedScene" uid="uid://c0amlxm4qctt1" path="res://scenes/triple_jump_powerup.tscn" id="6_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://cahhlbs1438oe" path="res://scenes/low_gravity_powerup.tscn" id="7_xo05s"]
+[ext_resource type="PackedScene" uid="uid://4ug1scfyssje" path="res://scenes/music.tscn" id="8_dss4m"]
+[ext_resource type="PackedScene" uid="uid://nel8d3rc3wos" path="res://scenes/pause_menu.tscn" id="9_7t5mc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lakw3"]
+font = ExtResource("5_jhx03")
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_pm21f"]
+font = ExtResource("5_jhx03")
+shadow_size = 0
 
 [node name="World" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_7r4gi")]
+position = Vector2(60, 371)
+scale = Vector2(0.5, 0.5)
+
+[node name="TileMap" parent="." instance=ExtResource("2_w7kh3")]
+position = Vector2(-3, 598)
+
+[node name="Player" parent="." instance=ExtResource("3_e3hyu")]
+position = Vector2(389, 1025)
+scale = Vector2(2, 2)
+
+[node name="KILLZONE" parent="." instance=ExtResource("4_q5onr")]
+position = Vector2(766, 1256)
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="TripleJumpLabel" type="Label" parent="PowerUps"]
+offset_left = 592.0
+offset_top = 995.0
+offset_right = 667.0
+offset_bottom = 1013.0
+text = "Triple Jump"
+label_settings = SubResource("LabelSettings_lakw3")
+
+[node name="TripleJump" parent="PowerUps" instance=ExtResource("6_o8fc1")]
+position = Vector2(631, 1030)
+
+[node name="TripleJump2" parent="PowerUps" instance=ExtResource("6_o8fc1")]
+position = Vector2(1865, 1148)
+
+[node name="LowGravityLabel" type="Label" parent="PowerUps"]
+offset_left = 2407.0
+offset_top = 535.0
+offset_right = 2482.0
+offset_bottom = 553.0
+text = "Low Gravity"
+label_settings = SubResource("LabelSettings_pm21f")
+
+[node name="LowGravity" parent="PowerUps" instance=ExtResource("7_xo05s")]
+position = Vector2(2444, 582)
+
+[node name="Music" parent="." instance=ExtResource("8_dss4m")]
+process_mode = 3
+
+[node name="PauseMenuLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseMenuLayer" instance=ExtResource("9_7t5mc")]
+visible = false

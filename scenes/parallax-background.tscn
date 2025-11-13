@@ -18,6 +18,7 @@ color = Color(0.92941177, 0.3764706, 0.4627451, 1)
 
 [node name="Sky" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
 position = Vector2(1565, 1408)
@@ -36,6 +37,7 @@ texture = ExtResource("1_5vbvl")
 
 [node name="Far Mountains" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.25, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Far Mountains"]
 position = Vector2(-170.00012, 877.0001)
@@ -49,6 +51,7 @@ texture = ExtResource("1_xfmo7")
 
 [node name="Middle Mountains" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.5, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle Mountains"]
 position = Vector2(-183.00002, 1143)
@@ -60,8 +63,14 @@ position = Vector2(3046.9998, 1157)
 scale = Vector2(10.095311, 5.864583)
 texture = ExtResource("4_0rpho")
 
+[node name="Sprite2D3" type="Sprite2D" parent="Middle Mountains"]
+position = Vector2(4711, 1267)
+scale = Vector2(10.095311, 5.864583)
+texture = ExtResource("4_0rpho")
+
 [node name="Mist" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mist"]
 position = Vector2(-159.00012, 731)
@@ -75,6 +84,7 @@ texture = ExtResource("6_ue3cp")
 
 [node name="Far Trees" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.5, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Far Trees"]
 position = Vector2(-124.12512, 901.2503)
@@ -87,7 +97,9 @@ scale = Vector2(10.080468, 5.921875)
 texture = ExtResource("2_jqk8q")
 
 [node name="Near Trees" type="Parallax2D" parent="."]
+z_index = 100
 scroll_scale = Vector2(2, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Near Trees"]
 position = Vector2(-179.00024, 865.24994)
@@ -96,5 +108,10 @@ texture = ExtResource("5_grlik")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Near Trees"]
 position = Vector2(2994.8745, 885.24994)
+scale = Vector2(10.212499, 6.0187497)
+texture = ExtResource("5_grlik")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Near Trees"]
+position = Vector2(6247.0005, 890)
 scale = Vector2(10.212499, 6.0187497)
 texture = ExtResource("5_grlik")
