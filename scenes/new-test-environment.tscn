@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://8xfhfqouxd8l"]
+[gd_scene load_steps=17 format=3 uid="uid://8xfhfqouxd8l"]
 
 [ext_resource type="PackedScene" uid="uid://di7q142tg02d8" path="res://scenes/tile_map.tscn" id="1_1j6am"]
+[ext_resource type="Texture2D" uid="uid://beiuq1sf71now" path="res://assets/CastleTiles.png" id="1_2vgee"]
 [ext_resource type="PackedScene" uid="uid://by2muw71mt5q8" path="res://scenes/parallax-background.tscn" id="1_os403"]
 [ext_resource type="PackedScene" uid="uid://bv7img0p78c62" path="res://scenes/Player.tscn" id="2_os403"]
 [ext_resource type="PackedScene" uid="uid://b6c2oappi5y5f" path="res://scenes/killzone.tscn" id="3_twoqr"]
@@ -9,6 +10,70 @@
 [ext_resource type="PackedScene" uid="uid://cahhlbs1438oe" path="res://scenes/low_gravity_powerup.tscn" id="7_0ocuq"]
 [ext_resource type="FontFile" uid="uid://cmvnfe68533p4" path="res://assets/fonts/Ancient Medium.ttf" id="7_kb45w"]
 [ext_resource type="PackedScene" uid="uid://nel8d3rc3wos" path="res://scenes/pause_menu.tscn" id="9_7u3b3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmgpu"]
+size = Vector2(98.25, 97.5)
+
+[sub_resource type="Animation" id="Animation_v1jgh"]
+resource_name = "platformer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2663, 1165), Vector2(3185, 1163.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2662, 1163), Vector2(3184, 1161.5)]
+}
+
+[sub_resource type="Animation" id="Animation_c43qr"]
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(2.1435478, 1.8660666),
+"update": 0,
+"values": [Vector2(2609, 1226.5), Vector2(3080, 1227.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(2.1435478, 1.8660666),
+"update": 0,
+"values": [Vector2(2608, 1224.5), Vector2(3079, 1225.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21jas"]
+_data = {
+&"RESET": SubResource("Animation_c43qr"),
+&"platformer": SubResource("Animation_v1jgh")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ocuq"]
 font = ExtResource("7_kb45w")
@@ -20,7 +85,26 @@ shadow_size = 0
 
 [node name="NewTestEnvironment" type="Node2D"]
 
+[node name="Platform" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(2609, 1226.5)
+texture = ExtResource("1_2vgee")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 97.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(2608, 1224.5)
+shape = SubResource("RectangleShape2D_rmgpu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_21jas")
+}
+autoplay = "RESET"
+
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_os403")]
+visible = false
 position = Vector2(60, 371)
 scale = Vector2(0.5, 0.5)
 
