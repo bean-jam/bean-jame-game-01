@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bskhexa5tj4l8"]
+[gd_scene load_steps=13 format=3 uid="uid://bskhexa5tj4l8"]
 
 [ext_resource type="PackedScene" uid="uid://by2muw71mt5q8" path="res://scenes/parallax-background.tscn" id="1_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://di7q142tg02d8" path="res://scenes/tile_map.tscn" id="2_w7kh3"]
@@ -10,6 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://4ug1scfyssje" path="res://scenes/music.tscn" id="8_dss4m"]
 [ext_resource type="PackedScene" uid="uid://nel8d3rc3wos" path="res://scenes/pause_menu.tscn" id="9_7t5mc"]
 
+[sub_resource type="Environment" id="Environment_7r4gi"]
+background_mode = 3
+ssao_radius = 9.17
+ssao_intensity = 11.65
+ssao_power = 5.223303
+ssao_detail = 4.25
+ssao_horizon = 1.0
+ssao_sharpness = 1.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.93
+glow_bloom = 0.06
+glow_blend_mode = 1
+fog_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+
 [sub_resource type="LabelSettings" id="LabelSettings_lakw3"]
 font = ExtResource("5_jhx03")
 shadow_size = 0
@@ -19,6 +36,9 @@ font = ExtResource("5_jhx03")
 shadow_size = 0
 
 [node name="World" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7r4gi")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_7r4gi")]
 position = Vector2(60, 371)

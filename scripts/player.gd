@@ -34,7 +34,7 @@ var power_active = false # powerup to triple jump
 @onready var jump_sfx = $JumpSFX
 @onready var death_sfx = $DeathSFX
 
-func respawn(): # respawn function to set the players position back at starting coordinates of the test enviro
+func respawn() -> void: # respawn function to set the players position back at starting coordinates of the test enviro
 	self.global_position = spawn_point
 	death_sfx.play()
 	

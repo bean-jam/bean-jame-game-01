@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bv7img0p78c62"]
+[gd_scene load_steps=32 format=3 uid="uid://bv7img0p78c62"]
 
 [ext_resource type="Script" uid="uid://us0yogqkr4f0" path="res://scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bsn8yfnbg26v8" path="res://assets/islander_.png" id="1_xhfnw"]
@@ -44,17 +44,25 @@ shader_parameter/particles_anim_v_frames = 1
 shader_parameter/particles_anim_loop = false
 
 [sub_resource type="Curve" id="Curve_khinc"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.49438208), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_bruh7"]
 curve = SubResource("Curve_khinc")
+
+[sub_resource type="Curve" id="Curve_qu4a1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_70d11"]
+curve = SubResource("Curve_qu4a1")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6eyey"]
 gravity = Vector3(0, 0, 0)
 scale_min = 1.5
 scale_max = 1.5
 alpha_curve = SubResource("CurveTexture_bruh7")
+hue_variation_curve = SubResource("CurveTexture_70d11")
 anim_speed_min = 1.0
 anim_speed_max = 1.0
 
@@ -206,11 +214,11 @@ dash_curve = SubResource("Curve_mdl7e")
 
 [node name="dash_particles" type="GPUParticles2D" parent="Player"]
 material = SubResource("ShaderMaterial_cw2d6")
-position = Vector2(0, 2)
-amount = 16
+position = Vector2(0, 1)
+amount = 50
 texture = ExtResource("2_qu4a1")
-lifetime = 8.43
-speed_scale = 53.85
+lifetime = 18.0
+speed_scale = 50.4
 process_material = SubResource("ParticleProcessMaterial_6eyey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
